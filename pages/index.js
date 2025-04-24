@@ -1,6 +1,6 @@
 // pages/index.js
 
-xport default function Home() {
+export default function Home() {
   return (
     <div className="min-h-screen bg-gray-100 text-gray-800">
       <header className="bg-white shadow-md p-4">
@@ -15,7 +15,6 @@ xport default function Home() {
             Vendez et achetez facilement avec Mobile Money. Accessible à tous, partout dans le monde.
           </p>
         </section>
-
         <section className="max-w-xl mx-auto">
           <input
             type="text"
@@ -66,12 +65,35 @@ xport default function Home() {
             ))}
           </div>
         </section>
-      </main>
 
+        <section className="bg-indigo-100 p-6 rounded-lg">
+          <h3 className="text-xl font-bold text-center mb-4">FAQ – Questions fréquentes</h3>
+          <div className="space-y-4">
+            {[
+              {
+                q: "Comment créer un compte vendeur ?",
+                a: "Cliquez sur 'S'inscrire', puis choisissez 'Vendeur'. Remplissez les informations demandées.",
+              },
+              {
+                q: "Quels moyens de paiement sont acceptés ?",
+                a: "Mobile Money, carte bancaire, et autres méthodes selon votre pays.",
+              },
+              {
+                q: "Est-ce que la plateforme est sécurisée ?",
+                a: "Oui, nous utilisons des protocoles de sécurité avancés pour protéger vos données et transactions.",
+              },
+            ].map(({ q, a }) => (
+              <div key={q} className="bg-white rounded p-4 shadow-sm">
+                <p className="font-semibold text-indigo-700">{q}</p>
+                <p className="text-gray-700">{a}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      </main>
       <footer className="bg-white text-center p-4 mt-6 text-sm text-gray-500 border-t">
         © 2025 WandaMarket — Tous droits réservés
       </footer>
     </div>
   );
 }
-

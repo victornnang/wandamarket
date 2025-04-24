@@ -2,13 +2,13 @@
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-100 text-gray-800">
+    <div className="min-h-screen bg-gray-100 text-gray-800 flex flex-col">
       <header className="bg-white shadow-md p-4">
         <h1 className="text-3xl font-bold text-indigo-600 text-center">WandaMarket</h1>
         <p className="text-center text-lg text-gray-600">Votre plateforme e-commerce B2B/B2C</p>
       </header>
 
-      <main className="p-6 space-y-12">
+      <main className="p-6 space-y-12 flex-grow">
         <section className="text-center">
           <h2 className="text-2xl font-semibold mb-4">Bienvenue !</h2>
           <p className="text-md text-gray-700">
@@ -33,6 +33,7 @@ export default function Home() {
             ))}
           </div>
         </section>
+
         <section className="bg-indigo-50 p-6 rounded-lg text-center">
           <h3 className="text-xl font-bold mb-2">À propos de WandaMarket</h3>
           <p className="text-gray-700">
@@ -64,9 +65,7 @@ export default function Home() {
               </div>
             ))}
           </div>
-        </section>
-
-        <section className="bg-indigo-100 p-6 rounded-lg">
+        </section><section className="bg-indigo-100 p-6 rounded-lg">
           <h3 className="text-xl font-bold text-center mb-4">FAQ – Questions fréquentes</h3>
           <div className="space-y-4">
             {[
@@ -91,9 +90,40 @@ export default function Home() {
           </div>
         </section>
       </main>
-      <footer className="bg-white text-center p-4 mt-6 text-sm text-gray-500 border-t">
-        © 2025 WandaMarket — Tous droits réservés
+
+      <footer className="bg-white border-t p-6 text-sm text-gray-600">
+        <div className="max-w-6xl mx-auto grid sm:grid-cols-2 md:grid-cols-4 gap-6">
+          <div>
+            <h4 className="font-bold mb-2">WandaMarket</h4>
+            <p>Marketplace gabonaise pour tous. Paiement sécurisé par Mobile Money.</p>
+          </div>
+          <div>
+            <h4 className="font-bold mb-2">Liens utiles</h4>
+            <ul className="space-y-1">
+              <li><a href="#" className="hover:underline">Accueil</a></li>
+              <li><a href="#" className="hover:underline">Devenir vendeur</a></li>
+              <li><a href="#" className="hover:underline">Support client</a></li>
+            </ul>
+          </div>
+          <div>
+          <h4 className="font-bold mb-2">Informations</h4>
+            <ul className="space-y-1">
+              <li><a href="#" className="hover:underline">Conditions d'utilisation</a></li>
+              <li><a href="#" className="hover:underline">Politique de confidentialité</a></li>
+              <li><a href="#" className="hover:underline">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 className="font-bold mb-2">Suivez-nous</h4>
+            <div className="flex space-x-3">
+              <a href="#"><span>Facebook</span></a>
+              <a href="#"><span>Instagram</span></a>
+              <a href="#"><span>Twitter</span></a>
+            </div>
+          </div>
+        </div>
+        <p className="text-center mt-6 text-xs text-gray-400">© 2025 WandaMarket — Tous droits réservés.</p>
       </footer>
     </div>
-  );
+ );
 }

@@ -1,3 +1,4 @@
+// Pages d'accueil principale de WandaMarket
 export default function Home() {
   return (
     <div>

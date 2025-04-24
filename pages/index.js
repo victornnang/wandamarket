@@ -4,40 +4,49 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gray-100 text-gray-800">
       <header className="bg-white shadow-md p-4">
-  <h1 className="text-3xl font-bold text-indigo-600 text-center">WandaMarket</h1>
-  <p className="text-center text-lg text-gray-600 mb-4">Votre plateforme e-commerce B2B/B2C</p>
+        <h1 className="text-3xl font-bold text-indigo-600 text-center">WandaMarket</h1>
+        <p className="text-center text-lg text-gray-600">Votre plateforme e-commerce B2B/B2C</p>
+      </header>
 
-  <div className="flex justify-center">
-    <input
-      type="text"
-      placeholder="Rechercher un produit..."
-      className="w-full max-w-md px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"
-    />
-  </div>
-</header>
-
-
-      <main className="p-6 text-center">
-        <h2 className="text-2xl font-semibold mb-4">Bienvenue !</h2>
-        <p className="text-md text-gray-700 mb-8">
-          Vendez et achetez facilement avec Mobile Money. Accessible à tous, partout dans le monde.
-        </p>
-        <section>
-          <h3 className="text-xl font-semibold mb-4">Produits en vedette</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="bg-white p-4 rounded-lg shadow-md">
-              <h4 className="text-lg font-bold">Téléphones</h4>
-              <p className="text-gray-600">Smartphones de dernière génération.</p>
-            </div>
-            <div className="bg-white p-4 rounded-lg shadow-md">
-              <h4 className="text-lg font-bold">Vêtements</h4>
-              <p className="text-gray-600">Mode homme, femme et enfants.</p>
-            </div>
-            <div className="bg-white p-4 rounded-lg shadow-md">
-              <h4 className="text-lg font-bold">Électroménager</h4>
-              <p className="text-gray-600">Matériel pratique pour votre maison.</p>
-            </div>
+      <main className="p-6">
+        {/* Barre de recherche */}
+        <div className="flex justify-center my-6">
+          <input
+            type="text"
+            placeholder="Rechercher un produit, une boutique..."
+            className="w-full max-w-md p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          />
+        </div>
+{/* Catégories populaires */}
+<section>
+          <h2 className="text-2xl font-bold mb-6 text-center text-indigo-600">Catégories Populaires</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {[
+              { nom: "Électronique", image: "https://via.placeholder.com/150" },
+              { nom: "Mode", image: "https://via.placeholder.com/150" },
+              { nom: "Maison & Déco", image: "https://via.placeholder.com/150" },
+              { nom: "Santé & Beauté", image: "https://via.placeholder.com/150" },
+              { nom: "Épicerie", image: "https://via.placeholder.com/150" },
+              { nom: "Services", image: "https://via.placeholder.com/150" }
+            ].map((cat, index) => (
+              <div key={index} className="bg-white rounded-xl shadow-md overflow-hidden">
+                <img src={cat.image} alt={cat.nom} className="w-full h-40 object-cover" />
+                <div className="p-4">
+                  <h3 className="text-lg font-semibold text-gray-700 text-center">{cat.nom}</h3>
+                  </div>
+              </div>
+            ))}
           </div>
+        </section>
+
+        {/* À propos */}
+        <section className="bg-indigo-50 p-6 rounded-xl mt-10 shadow">
+          <h2 className="text-2xl font-bold mb-4 text-indigo-600">À propos de WandaMarket</h2>
+          <p className="text-gray-700 text-md leading-relaxed">
+            WandaMarket est une plateforme de commerce en ligne B2B et B2C dédiée à connecter vendeurs et acheteurs
+            du monde entier. Grâce aux paiements par Mobile Money, la plateforme est accessible à tous, même dans
+            les zones rurales. Notre objectif est de favoriser l’inclusion numérique et économique à travers l’Afrique et au-delà.
+          </p>
         </section>
       </main>
 
